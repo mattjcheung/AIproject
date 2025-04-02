@@ -8,7 +8,7 @@ from collections import deque
 # GLOBAL VARIABLES
 BOARD_N = 8
 
-DIRECTIONS = [Direction.Down, Direction.DownLeft, Direction.DownRight, 
+DIRECTIONS = [Direction.DownLeft, Direction.DownRight, Direction.Down,
              Direction.Left, Direction.Right]
 
 """
@@ -210,7 +210,7 @@ def reconstructPath(
 
     # iterate backwards through predecessor dict until startCoord
     while node != startCoord:
-        path.append(node)
+        path.append(predecessor[node])
         moves.append(directions[node])
         node = predecessor[node]
 
